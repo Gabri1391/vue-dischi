@@ -1,7 +1,7 @@
 <template>
   <div class="div">
     <BaseHeader :genres-list="genresList" @genre-change="setSelectedGenre"/>
-    <BaseMain :selected-genre="selectedGenre"/>
+    <BaseMain :selected-genre="selectedGenre" @fetched-genres="setGenresList"/>
   </div>
 </template> 
 
@@ -23,6 +23,9 @@ export default {
   methods:{
     setSelectedGenre(genre){
        this.selectedGenre = genre;
+    },
+    setGenresList(genres){
+      this.genresList = genres;
     }
   }
 };

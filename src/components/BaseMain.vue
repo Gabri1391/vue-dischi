@@ -43,6 +43,10 @@ export default {
             axios.get(this.api)
             .then((res) =>{
                 this.albums = res.data.response
+
+                // Raccolgo tutti i generi
+               const genres = new Set(this.albums.map((album) => album.genre));
+               this.$emit('fethched-genres', genres)
             })
         },
     },
