@@ -33,10 +33,10 @@ export default {
         computed: {
         filteredAlbums() {
             if (!this.selectedGenre) return this.albums;
-            
+
             return this.albums.filter((album) => album.genre === this.selectedGenre
             )
-        }
+        },
     },
     methods:{
         getAlbums(){
